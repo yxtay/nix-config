@@ -40,9 +40,8 @@
         g = "git";
         k = "kubectl";
         p = "podman";
-        ".." = "cd ..";
+        ".." = "z ..";
         cd = "z";
-        ls = "eza";
         cat = "bat";
         top = "btop";
     };

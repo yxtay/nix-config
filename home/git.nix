@@ -15,10 +15,6 @@
       userName = user.name;
       userEmail = user.email;
 
-      ignores = [
-        ".DS_Store"
-      ];
-
       includes = [
         {
           condition = "gitdir:~/git/work/";

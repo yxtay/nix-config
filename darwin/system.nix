@@ -1,4 +1,4 @@
-{ config, user, ... }: {
+{ pkgs, user, ... }: {
   ###################################################################################
   #
   #  macOS's System configuration
@@ -25,6 +25,13 @@
       # All custom entries can be found by running `defaults read` command.
       # or `defaults read xxx` to read a specific domain.
       CustomUserPreferences = {
+        NSGlobalDomain = {
+          AppleLanguages = [
+              "en-SG"
+              "zh-Hans-SG"
+          ];
+          AppleLocale = ["en_SG"];
+        };
         "com.apple.AdLib" = {
           allowApplePersonalizedAdvertising = false;
           allowIdentifierForAdvertising = false;
@@ -96,8 +103,17 @@
         launchanim = false;
         mineffect = "scale";
         minimize-to-application = true;
+        persistent-apps = [
+          "/System/Applications/Calendar.app"
+          "/Applications/Firefox.app"
+          "/Applications/Brave Browser.app"
+          "${pkgs.slack}/Applications/Slack.app"
+          "${pkgs.wezterm}/Applications/WezTerm.app"
+          "${pkgs.vscode}/Applications/Visual Studio Code.app"
+          "/Applications/GitHub Desktop.app"
+        ];
         persistent-others = [
-          ''${user.home}/Downloads''
+          "${user.home}/Downloads"
         ];
         show-recents = false;
         tilesize = 56;
