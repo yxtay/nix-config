@@ -3,12 +3,12 @@
 {
   # import sub modules
   imports = [
+    ./apps-dev.nix
     ./apps.nix
     ./fonts.nix
     ./git.nix
     ./gnu.nix
     ./helix.nix
-    ./python.nix
     ./shell.nix
     ./tmux.nix
     ./wezterm.nix
@@ -25,7 +25,7 @@
     # Home Manager needs a bit of information about you and the paths it should
     # manage.
     username = user.name;
-    homeDirectory = "/Users/${user.name}";
+    homeDirectory = user.home;
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release

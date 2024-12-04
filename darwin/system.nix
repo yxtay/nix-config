@@ -57,12 +57,6 @@
         # `defaults read NSGlobalDomain "xxx"`
         AppleInterfaceStyle = "Dark";  # dark mode
         AppleKeyboardUIMode = 3;  # Mode 3 enables full keyboard control.
-        # AppleLanguages = [
-        #     "en-SG"
-        #     "en-US"
-        #     "zh-Hans-SG"
-        # ];
-        # AppleLocale = ["en_SG"];
         AppleMetricUnits = 1;
         AppleMeasurementUnits = "Centimeters";
         AppleTemperatureUnit = "Celsius";
@@ -103,7 +97,7 @@
         mineffect = "scale";
         minimize-to-application = true;
         persistent-others = [
-          ''${config.users.users."${user.name}".home}/Downloads''
+          ''${user.home}/Downloads''
         ];
         show-recents = false;
         tilesize = 56;

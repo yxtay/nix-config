@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    # https://github.com/pkill37/linuxify
     # https://github.com/shinokada/macgnu
     
     # GNU programs non-existing in macOS

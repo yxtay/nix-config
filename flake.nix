@@ -46,9 +46,10 @@
       name = "yx-tay-eml86";
     };
 
-    user = {
+    user = rec {
       name = "yuxuantay";
       uid = 501;
+      home = "/Users/${name}";
       email = "wyextay@gmail.com";
       workEmail = "tay.yuxuan@gt.tech.gov.sg";
     };
