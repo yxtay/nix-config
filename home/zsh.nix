@@ -14,18 +14,12 @@
 
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    historySubstringSearch.enable = true;
 
     shellAliases = config.home.shellAliases;
 
     zsh-abbr = {
       enable = true;
       abbreviations = config.programs.zsh.shellAliases;
-    };
-
-    antidote = {
-      enable = true;
-      plugins = [];
     };
 
     plugins = [];

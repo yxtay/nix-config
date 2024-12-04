@@ -49,7 +49,14 @@
 
   programs = {
     atuin.enable = true;
-    bat.enable = true;
+
+    bat = {
+      enable = true;
+      config = {
+        theme = "Dracula";
+      };
+    };
+
     btop.enable = true;
     direnv = {
       enable = true;
@@ -57,10 +64,15 @@
     };
     eza.enable = true;
     fd.enable = true;
+
     fzf = {
       enable = true;
+      changeDirWidgetCommand = "fd --type d";
+      defaultCommand = "fd --type f";
+      fileWidgetCommand = "fd --type f";
       tmux.enableShellIntegration = true;
     };
+
     jq.enable = true;
     lazygit.enable = true;
     mise.enable = true;

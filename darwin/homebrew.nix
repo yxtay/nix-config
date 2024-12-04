@@ -40,6 +40,7 @@
       "1password"
       "bitwarden"
       "brave-browser"
+      "cloudflare-warp"
       "firefox"
 
       # communication
