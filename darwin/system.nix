@@ -107,9 +107,9 @@
           "/System/Applications/Calendar.app"
           "/Applications/Firefox.app"
           "/Applications/Brave Browser.app"
-          "${pkgs.slack}/Applications/Slack.app"
-          "${pkgs.wezterm}/Applications/WezTerm.app"
-          "${pkgs.vscode}/Applications/Visual Studio Code.app"
+          "/Applications/Slack.app"
+          "/Applications/WezTerm.app"
+          "/Applications/Visual Studio Code.app"
           "/Applications/GitHub Desktop.app"
         ];
         persistent-others = [

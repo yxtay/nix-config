@@ -15,6 +15,7 @@
       yq
 
       # files
+      broot
       dtrx
       duf
       dust
@@ -57,6 +58,7 @@
       };
     };
 
+    broot.enable = true;
     btop.enable = true;
     direnv = {
       enable = true;
@@ -68,8 +70,11 @@
     fzf = {
       enable = true;
       changeDirWidgetCommand = "fd --type d";
-      defaultCommand = "fd --type f";
+      changeDirWidgetOptions = [ "--preview 'eza --tree {} | head -50'" ];
+      defaultCommand = "fd --hidden --exclude '.git'";
+      defaultOptions = [ ];
       fileWidgetCommand = "fd --type f";
+      fileWidgetOptions = [ "--preview 'bat --color=always {}'" ];
       tmux.enableShellIntegration = true;
     };
 

@@ -36,24 +36,31 @@
     ];
 
     casks = [
+      # mac
+      "rectangle"
+
       # web
       "1password"
       "bitwarden"
       "brave-browser"
-      "cloudflare-warp"
       "firefox"
 
       # communication
       "libreoffice"
       "microsoft-teams"
+      "slack"
+      "zoom"
 
       # dev
       "github"
       # "docker"
       # "podman-desktop"
       "rancher"
+      "visual-studio-code"
+      "wezterm"
 
       # entertainment
+      "spotify"
       "stremio"
     ];
   };

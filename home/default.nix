@@ -3,7 +3,6 @@
 {
   # import sub modules
   imports = [
-    ./apps-dev.nix
     ./apps.nix
     ./fonts.nix
     ./git.nix

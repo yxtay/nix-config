@@ -1,7 +1,7 @@
 { ... }: {
   programs = {
     wezterm = {
-      enable = true;
+      enable = false;
 
       extraConfig = ''
         return {
@@ -11,4 +11,12 @@
       '';
     };
   };
+
+  xdg.configFile."wezterm/wezterm.lua".text = ''
+    local wezterm = require 'wezterm'
+    
+    return {
+      color_scheme = "Dracula (Official)",
+    }
+  '';
 }
