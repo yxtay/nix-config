@@ -2,7 +2,10 @@
   description = "nix-darwin system flake";
 
   nixConfig = {
-    extra-experimental-features = [ "nix-command" "flakes" ];
+    extra-experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://cachix.cachix.org"
@@ -39,11 +42,11 @@
     home-manager,
     determinate,
     mac-app-util,
-    nix-homebrew, 
+    nix-homebrew,
     ...
   }: let
     system = "x86_64-darwin"; # aarch64-darwin or x86_64-darwin
-    
+
     host = {
       name = "yx-tay-eml86";
     };
@@ -70,7 +73,7 @@
 
         modules = [
           ./darwin
-          
+
           determinate.darwinModules.default
           mac-app-util.darwinModules.default
           # https://github.com/zhaofengli/nix-homebrew

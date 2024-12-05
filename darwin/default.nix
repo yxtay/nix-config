@@ -1,6 +1,6 @@
-{ ... }: {
+{...}: {
   imports = [
-    ./networking.nix
+    # ./networking.nix
     ./homebrew.nix
     ./nix-core.nix
     ./system.nix

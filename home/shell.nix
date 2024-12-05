@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home = {
     packages = with pkgs; [
       # shell
-      atuin
+      # atuin
       btop
       procs
       thefuck
@@ -15,7 +15,6 @@
       yq
 
       # files
-      broot
       dtrx
       duf
       dust
@@ -28,7 +27,7 @@
       # security
       gnupg
       openssh
-      
+
       # data transfer
       curl
       httpie
@@ -37,19 +36,18 @@
     ];
 
     shellAliases = {
-        d = "docker";
-        g = "git";
-        k = "kubectl";
-        p = "podman";
-        ".." = "z ..";
-        cd = "z";
-        cat = "bat";
-        top = "btop";
+      d = "docker";
+      g = "git";
+      k = "kubectl";
+      p = "podman";
+      ".." = "z ..";
+      cd = "z";
+      cat = "bat";
     };
   };
 
   programs = {
-    atuin.enable = true;
+    # atuin.enable = true;
 
     bat = {
       enable = true;
@@ -58,7 +56,6 @@
       };
     };
 
-    broot.enable = true;
     btop.enable = true;
     direnv = {
       enable = true;
@@ -69,12 +66,12 @@
 
     fzf = {
       enable = true;
-      changeDirWidgetCommand = "fd --type d";
-      changeDirWidgetOptions = [ "--preview 'eza --tree {} | head -50'" ];
-      defaultCommand = "fd --hidden --exclude '.git'";
-      defaultOptions = [ ];
-      fileWidgetCommand = "fd --type f";
-      fileWidgetOptions = [ "--preview 'bat --color=always {}'" ];
+      changeDirWidgetCommand = "fd --type d --hidden --no-ignore --exclude '.git'";
+      changeDirWidgetOptions = ["--preview 'eza --tree --color=always {} | head -50'"];
+      defaultCommand = "fd --hidden --no-ignore --exclude '.git'";
+      defaultOptions = [];
+      fileWidgetCommand = "fd --type f --hidden --no-ignore --exclude '.git'";
+      fileWidgetOptions = ["--preview 'bat --color=always {}'"];
       tmux.enableShellIntegration = true;
     };
 

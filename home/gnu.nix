@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # https://github.com/shinokada/macgnu
-    
+
     # GNU programs non-existing in macOS
     autoconf
-    procps  # watch
+    procps # watch
     tree
     wdiff
     wget

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # https://discourse.nixos.org/t/neovim-and-nixos-star-crossed-lovers/25568
   # https://nixalted.com/
   # https://github.com/LazyVim/LazyVim/discussions/1972
@@ -9,7 +9,7 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraPackages =  with pkgs; [
+    extraPackages = with pkgs; [
       # LazyVim
       lua-language-server
       stylua
@@ -59,14 +59,38 @@
       trouble-nvim
       vim-illuminate
       vim-startuptime
-      { name = "LuaSnip"; path = luasnip; }
-      { name = "catppuccin"; path = catppuccin-nvim; }
-      { name = "mini.ai"; path = mini-nvim; }
-      { name = "mini.bufremove"; path = mini-nvim; }
-      { name = "mini.comment"; path = mini-nvim; }
-      { name = "mini.indentscope"; path = mini-nvim; }
-      { name = "mini.pairs"; path = mini-nvim; }
-      { name = "mini.surround"; path = mini-nvim; }
+      {
+        name = "LuaSnip";
+        path = luasnip;
+      }
+      {
+        name = "catppuccin";
+        path = catppuccin-nvim;
+      }
+      {
+        name = "mini.ai";
+        path = mini-nvim;
+      }
+      {
+        name = "mini.bufremove";
+        path = mini-nvim;
+      }
+      {
+        name = "mini.comment";
+        path = mini-nvim;
+      }
+      {
+        name = "mini.indentscope";
+        path = mini-nvim;
+      }
+      {
+        name = "mini.pairs";
+        path = mini-nvim;
+      }
+      {
+        name = "mini.surround";
+        path = mini-nvim;
+      }
 
       lazydev-nvim
       luvit-meta

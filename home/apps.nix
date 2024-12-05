@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # terminals & editors
     helix
@@ -40,7 +40,7 @@
     pylyzer
     ruff
     uv
-    
+
     # mac
     mas
 

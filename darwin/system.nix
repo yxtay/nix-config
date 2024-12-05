@@ -1,4 +1,9 @@
-{ pkgs, user, ... }: {
+{
+  pkgs,
+  host,
+  user,
+  ...
+}: {
   ###################################################################################
   #
   #  macOS's System configuration
@@ -21,14 +26,14 @@
       # Customize settings that not supported by nix-darwin directly
       # see the source code of this project to get more undocumented options:
       #    https://github.com/rgcr/m-cli
-      # 
+      #
       # All custom entries can be found by running `defaults read` command.
       # or `defaults read xxx` to read a specific domain.
       CustomUserPreferences = {
         NSGlobalDomain = {
           AppleLanguages = [
-              "en-SG"
-              "zh-Hans-SG"
+            "en-SG"
+            "zh-Hans-SG"
           ];
           AppleLocale = ["en_SG"];
         };
@@ -62,16 +67,16 @@
       #   https://github.com/yannbertrand/macos-defaults
       NSGlobalDomain = {
         # `defaults read NSGlobalDomain "xxx"`
-        AppleInterfaceStyle = "Dark";  # dark mode
-        AppleKeyboardUIMode = 3;  # Mode 3 enables full keyboard control.
+        AppleInterfaceStyle = "Dark"; # dark mode
+        AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
         AppleMetricUnits = 1;
         AppleMeasurementUnits = "Centimeters";
         AppleTemperatureUnit = "Celsius";
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
 
-        InitialKeyRepeat = 15;  # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
-        KeyRepeat = 2;  # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
+        InitialKeyRepeat = 15; # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
+        KeyRepeat = 2; # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
 
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
@@ -88,8 +93,8 @@
         PMPrintingExpandedStateForPrint = true;
         PMPrintingExpandedStateForPrint2 = true;
 
-        "com.apple.swipescrolldirection" = false;  # enable natural scrolling
-        "com.apple.sound.beep.feedback" = 0;  # disable beep sound when pressing volume up/down key
+        "com.apple.swipescrolldirection" = false; # enable natural scrolling
+        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
       };
 
       controlcenter = {
@@ -160,6 +165,11 @@
         askForPasswordDelay = 0;
       };
 
+      smb = {
+        NetBIOSName = host.name;
+        ServerDescription = host.name;
+      };
+
       trackpad = {
         Clicking = true;
         Dragging = true;
@@ -173,7 +183,7 @@
 
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToEscape  = true;
+      remapCapsLockToEscape = true;
     };
   };
 

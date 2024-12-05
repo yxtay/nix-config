@@ -1,9 +1,12 @@
-{ ... }: {
+{...}: {
   nix = {
     settings = {
       # enable flakes globally
-      experimental-features = [ "nix-command" "flakes" ];
-      
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+
       substituters = [
         "https://nix-community.cachix.org"
       ];

@@ -1,4 +1,8 @@
-{ lib, user, ... }: {
+{
+  lib,
+  user,
+  ...
+}: {
   # `programs.git` will generate the config file: ~/.config/git/config
   # to make git use this config file, `~/.gitconfig` should not exist!
   #
@@ -34,7 +38,7 @@
         init.defaultBranch = "main";
         pull.rebase = true;
         push.autoSetupRemote = true;
-        rebase= {
+        rebase = {
           autosquash = true;
           autostash = true;
         };
@@ -47,7 +51,7 @@
             smudge = "git-lfs smudge -- %f";
           };
         };
-        
+
         url = {
           "git@github.com:" = {
             insteadOf = "https://github.com/";
