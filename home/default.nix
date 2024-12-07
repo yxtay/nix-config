@@ -1,7 +1,7 @@
 {user, ...}: {
   # import sub modules
   imports = [
-    ./apps.nix
+    # ./apps.nix
     ./fonts.nix
     ./git.nix
     ./gnu.nix

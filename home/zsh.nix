@@ -16,6 +16,7 @@
       ignoreAllDups = true;
     };
 
+    historySubstringSearch.enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 

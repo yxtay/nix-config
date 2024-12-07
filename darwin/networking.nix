@@ -16,9 +16,4 @@
       "2a07:e340::4"
     ];
   };
-
-  system.defaults.smb = {
-    NetBIOSName = host.name;
-    ServerDescription = host.name;
-  };
 }

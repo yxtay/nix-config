@@ -1,5 +1,4 @@
 {
-  pkgs,
   host,
   user,
   ...
@@ -30,72 +29,69 @@
       # All custom entries can be found by running `defaults read` command.
       # or `defaults read xxx` to read a specific domain.
       CustomUserPreferences = {
-        NSGlobalDomain = {
-          AppleLanguages = [
-            "en-SG"
-            "zh-Hans-SG"
-          ];
-          AppleLocale = ["en_SG"];
-        };
-        "com.apple.AdLib" = {
-          allowApplePersonalizedAdvertising = false;
-          allowIdentifierForAdvertising = false;
-        };
-        "com.apple.desktopservices" = {
-          # Avoid creating .DS_Store files on network or USB volumes
-          DSDontWriteNetworkStores = true;
-          DSDontWriteUSBStores = true;
-        };
-        # Prevent Photos from opening automatically when devices are plugged in
-        "com.apple.ImageCapture".disableHotPlug = true;
-        "com.apple.print.PrintingPrefs" = {
-          # Automatically quit printer app once the print jobs complete
-          "Quit When Finished" = true;
-        };
-        "com.apple.SoftwareUpdate" = {
-          # https://developer.apple.com/documentation/devicemanagement/softwareupdate
-          AutomaticallyInstallAppUpdates = true;
-          AutomaticCheckEnabled = true;
-          AutomaticDownload = true;
-          ConfigDataInstall = true;
-          CriticalUpdateInstall = true;
-        };
+        # NSGlobalDomain = {
+        #   AppleLanguages = [
+        #     "en-SG"
+        #     "zh-Hans-SG"
+        #   ];
+        #   AppleLocale = ["en_SG"];
+        # };
+        # "com.apple.AdLib" = {
+        #   allowApplePersonalizedAdvertising = false;
+        #   allowIdentifierForAdvertising = false;
+        # };
+        # "com.apple.desktopservices" = {
+        #   # Avoid creating .DS_Store files on network or USB volumes
+        #   DSDontWriteNetworkStores = true;
+        #   DSDontWriteUSBStores = true;
+        # };
+        # # Prevent Photos from opening automatically when devices are plugged in
+        # "com.apple.ImageCapture".disableHotPlug = true;
+        # "com.apple.print.PrintingPrefs" = {
+        #   # Automatically quit printer app once the print jobs complete
+        #   "Quit When Finished" = true;
+        # };
+        # "com.apple.SoftwareUpdate" = {
+        #   # https://developer.apple.com/documentation/devicemanagement/softwareupdate
+        #   AutomaticallyInstallAppUpdates = true;
+        #   AutomaticCheckEnabled = true;
+        #   AutomaticDownload = true;
+        #   ConfigDataInstall = true;
+        #   CriticalUpdateInstall = true;
+        # };
       };
 
-      # customize settings that not supported by nix-darwin directly
-      # Incomplete list of macOS `defaults` commands :
-      #   https://github.com/yannbertrand/macos-defaults
-      NSGlobalDomain = {
-        # `defaults read NSGlobalDomain "xxx"`
-        AppleInterfaceStyle = "Dark"; # dark mode
-        AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
-        AppleMetricUnits = 1;
-        AppleMeasurementUnits = "Centimeters";
-        AppleTemperatureUnit = "Celsius";
-        AppleShowAllExtensions = true;
-        AppleShowAllFiles = true;
+      # # customize settings that not supported by nix-darwin directly
+      # # Incomplete list of macOS `defaults` commands :
+      # #   https://github.com/yannbertrand/macos-defaults
+      # NSGlobalDomain = {
+      #   # `defaults read NSGlobalDomain "xxx"`
+      #   AppleInterfaceStyle = "Dark"; # dark mode
+      #   AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
+      #   AppleMetricUnits = 1;
+      #   AppleMeasurementUnits = "Centimeters";
+      #   AppleTemperatureUnit = "Celsius";
+      #   AppleShowAllExtensions = true;
+      #   AppleShowAllFiles = true;
 
-        InitialKeyRepeat = 15; # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
-        KeyRepeat = 2; # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
+      #   NSAutomaticCapitalizationEnabled = false;
+      #   NSAutomaticDashSubstitutionEnabled = false;
+      #   NSAutomaticInlinePredictionEnabled = false;
+      #   NSAutomaticPeriodSubstitutionEnabled = false;
+      #   NSAutomaticQuoteSubstitutionEnabled = false;
+      #   NSAutomaticSpellingCorrectionEnabled = false;
+      #   NSAutomaticWindowAnimationsEnabled = false;
+      #   NSDisableAutomaticTermination = true;
+      #   NSDocumentSaveNewDocumentsToCloud = false;
+      #   NSNavPanelExpandedStateForSaveMode = true;
+      #   NSNavPanelExpandedStateForSaveMode2 = true;
+      #   NSUseAnimatedFocusRing = false;
+      #   PMPrintingExpandedStateForPrint = true;
+      #   PMPrintingExpandedStateForPrint2 = true;
 
-        NSAutomaticCapitalizationEnabled = false;
-        NSAutomaticDashSubstitutionEnabled = false;
-        NSAutomaticInlinePredictionEnabled = false;
-        NSAutomaticPeriodSubstitutionEnabled = false;
-        NSAutomaticQuoteSubstitutionEnabled = false;
-        NSAutomaticSpellingCorrectionEnabled = false;
-        NSAutomaticWindowAnimationsEnabled = false;
-        NSDisableAutomaticTermination = true;
-        NSDocumentSaveNewDocumentsToCloud = false;
-        NSNavPanelExpandedStateForSaveMode = true;
-        NSNavPanelExpandedStateForSaveMode2 = true;
-        NSUseAnimatedFocusRing = false;
-        PMPrintingExpandedStateForPrint = true;
-        PMPrintingExpandedStateForPrint2 = true;
-
-        "com.apple.swipescrolldirection" = false; # enable natural scrolling
-        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
-      };
+      #   "com.apple.swipescrolldirection" = false; # enable natural scrolling
+      #   "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
+      # };
 
       controlcenter = {
         BatteryShowPercentage = true;
@@ -141,11 +137,6 @@
         _FXShowPosixPathInTitle = true;
         _FXSortFoldersFirst = true;
         _FXSortFoldersFirstOnDesktop = true;
-      };
-
-      loginwindow = {
-        GuestEnabled = false;
-        SHOWFULLNAME = true;
       };
 
       menuExtraClock = {
