@@ -1,9 +1,9 @@
 {...}: {
   imports = [
     # ./networking.nix
-    ./homebrew.nix
+    # ./homebrew.nix
     ./nix-core.nix
-    ./system.nix
+    # ./system.nix
     ./users.nix
   ];
 

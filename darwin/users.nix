@@ -6,10 +6,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
     "${user.name}" = {
-      uid = user.uid;
-      createHome = true;
+      # uid = user.uid;
+      # createHome = true;
       home = user.home;
-      isHidden = false;
+      # isHidden = false;
       shell = pkgs.zsh;
     };
   };

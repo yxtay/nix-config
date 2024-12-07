@@ -56,6 +56,9 @@
     ];
 
     casks = [
+      # mac
+      "rectangle"
+
       # web
       "1password"
       "bitwarden"

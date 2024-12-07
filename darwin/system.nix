@@ -165,11 +165,6 @@
         askForPasswordDelay = 0;
       };
 
-      smb = {
-        NetBIOSName = host.name;
-        ServerDescription = host.name;
-      };
-
       trackpad = {
         Clicking = true;
         Dragging = true;
