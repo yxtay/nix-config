@@ -1,8 +1,5 @@
 {host, ...}: {
   networking = {
-    computerName = host.name;
-    hostName = host.name;
-
     knownNetworkServices = [
       "Wi-Fi"
       # "Thunderbolt Bridge"
