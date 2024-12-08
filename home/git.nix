@@ -24,11 +24,12 @@
           condition = "gitdir:~/git/work/";
           contents = {
             user.email = user.workEmail;
-            # url = {
-            #   "github.com" = {
-            #     pushInsteadOf = "github-work.com/";
-            #   };
-            # };
+            url = {
+              "git@github-work:" = {
+                insteadOf = "git@github.com:";
+                pushInsteadOf = "https://github.com/";
+              };
+            };
           };
         }
       ];

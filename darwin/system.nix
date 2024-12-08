@@ -61,6 +61,7 @@
       };
 
       NSGlobalDomain = {
+        AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark"; # dark mode
         AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
         AppleMetricUnits = 1;
@@ -99,6 +100,7 @@
         launchanim = false;
         mineffect = "scale";
         minimize-to-application = true;
+        orientation = "left";
         persistent-apps = [
           "/System/Applications/Calendar.app"
           "/Applications/Firefox.app"
