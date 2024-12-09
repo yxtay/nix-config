@@ -32,6 +32,17 @@
             };
           };
         }
+        {
+          condition = "gitdir:~/git/personal/";
+          contents = {
+            user.email = user.email;
+            url = {
+              "git@github.com:" = {
+                pushInsteadOf = "https://github.com/";
+              };
+            };
+          };
+        }
       ];
 
       extraConfig = {
@@ -55,12 +66,6 @@
             process = "git-lfs filter-process";
             required = true;
             smudge = "git-lfs smudge -- %f";
-          };
-        };
-
-        url = {
-          "git@github.com:" = {
-            pushInsteadOf = "https://github.com/";
           };
         };
 
