@@ -48,9 +48,12 @@
     };
 
     brews = [
+      "docker"
+      "docker-buildx"
+      "docker-completion"
+      "docker-compose"
       {
         name = "colima";
-        # start_service = true;
         # restart_service = "changed";
       }
     ];

@@ -15,18 +15,12 @@
     direnv
     git
     gh
-    lazygit
     mise
     nix-direnv
     ollama
     terraform
 
     # container
-    docker
-    docker-buildx
-    docker-compose
-    docker-credential-helpers
-    lazydocker
     kubectl
     kubernetes-helm
     podman
