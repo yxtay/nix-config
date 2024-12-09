@@ -11,6 +11,7 @@
   #    https://daiderd.com/nix-darwin/manual/index.html#sec-options
   #  Incomplete list of macOS `defaults` commands :
   #    https://github.com/yannbertrand/macos-defaults
+  #    https://mths.be/macos
   #
   ###################################################################################
   system = {
@@ -61,12 +62,17 @@
       };
 
       NSGlobalDomain = {
+        AppleEnableSwipeNavigateWithScrolls = false;
+        AppleFontSmoothing = 1;
         AppleICUForce24HourTime = true;
-        AppleInterfaceStyle = "Dark"; # dark mode
+        AppleInterfaceStyle = "Dark";
+        AppleInterfaceStyleSwitchesAutomatically = false;
         AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
         AppleMetricUnits = 1;
         AppleMeasurementUnits = "Centimeters";
         AppleTemperatureUnit = "Celsius";
+        AppleScrollerPagingBehavior = false;
+        AppleShowScrollBars = "Automatic";
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
 
@@ -81,17 +87,23 @@
         NSDocumentSaveNewDocumentsToCloud = false;
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
+        NSScrollAnimationEnabled = true;
+        NSTableViewDefaultSizeMode = 2;
+        NSTextShowsControlCharacters = true;
         NSUseAnimatedFocusRing = false;
         PMPrintingExpandedStateForPrint = true;
         PMPrintingExpandedStateForPrint2 = true;
 
-        "com.apple.swipescrolldirection" = false; # enable natural scrolling
-        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
+        "com.apple.sound.beep.feedback" = 0;
+        "com.apple.springing.enabled" = true;
+        "com.apple.swipescrolldirection" = false;
+        "com.apple.trackpad.enableSecondaryClick" =true;
+        "com.apple.trackpad.forceClick" = true;
+        "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
       };
 
       controlcenter = {
         BatteryShowPercentage = true;
-        Bluetooth = true;
       };
 
       dock = {
@@ -113,23 +125,30 @@
         persistent-others = [
           "${user.home}/Downloads"
         ];
+        show-process-indicators = true;
         show-recents = false;
         tilesize = 56;
+        wvous-bl-corner = 1;
+        wvous-br-corner = 1;
+        wvous-tl-corner = 1;
+        wvous-tr-corner = 1;
       };
 
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
+        CreateDesktop = false;
         FXDefaultSearchScope = "SCcf";
         FXEnableExtensionChangeWarning = false;
         FXPreferredViewStyle = "clmv";
         FXRemoveOldTrashItems = true;
+        NewWindowTarget = "Home";
         QuitMenuItem = true;
-        ShowExternalHardDrivesOnDesktop = true;
-        ShowHardDrivesOnDesktop = true;
-        ShowMountedServersOnDesktop = true;
+        ShowExternalHardDrivesOnDesktop = false;
+        ShowHardDrivesOnDesktop = false;
+        ShowMountedServersOnDesktop = false;
+        ShowRemovableMediaOnDesktop = false;
         ShowPathbar = true;
-        ShowRemovableMediaOnDesktop = true;
         ShowStatusBar = true;
         _FXShowPosixPathInTitle = true;
         _FXSortFoldersFirst = true;
@@ -145,6 +164,7 @@
       screencapture = {
         disable-shadow = true;
         location = "~/Downloads";
+        show-thumbnail = false;
         type = "png";
       };
 
