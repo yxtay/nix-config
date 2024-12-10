@@ -77,6 +77,13 @@
 
     jq.enable = true;
     lazygit.enable = true;
+
+    mcfly = {
+      enable = true;
+      fuzzySearchFactor = 2;
+      fzf.enable = true;
+    };
+
     mise.enable = true;
     nix-index.enable = true;
     ripgrep.enable = true;
