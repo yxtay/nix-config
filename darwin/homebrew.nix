@@ -52,10 +52,11 @@
       "docker-buildx"
       "docker-completion"
       "docker-compose"
-      {
-        name = "colima";
-        # restart_service = "changed";
-      }
+      "docker-credential-helper"
+      "helm"
+      "kind"  # podman-desktop
+      "kubectl"  # podman-desktop
+      "podman"  # podman-desktop
     ];
 
     casks = [
@@ -63,13 +64,13 @@
       "rectangle"
 
       # web
-      "1password"
       "bitwarden"
       "brave-browser"
       "firefox"
 
       # communication
       "libreoffice"
+      "microsoft-auto-update"  # for microsoft-teams
       "microsoft-teams"
       "slack"
       "zoom"
@@ -78,13 +79,17 @@
       "github"
       # "docker"
       "podman-desktop"
-      "rancher"
       "visual-studio-code"
       "wezterm"
 
       # entertainment
       "spotify"
       "stremio"
+
+      # work
+      "1password"
+      "cloudflare-warp"
+      "intune-company-portal"
     ];
   };
 }

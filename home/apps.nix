@@ -21,9 +21,13 @@
     terraform
 
     # container
-    kubectl
-    kubernetes-helm
-    podman
+    # docker  # homebrew
+    # docker-builx  # homebrew
+    # docker-compose  # homebrew
+    # docker-credential-helper  # homebrew
+    # kubectl  # homebrew
+    # kubernetes-helm  # homebrew
+    # podman  # homebrew
 
     # python
     cookiecutter
