@@ -30,7 +30,7 @@
     nix-homebrew,
     ...
   }: let
-    system = "x86_64-darwin"; # aarch64-darwin or x86_64-darwin
+    system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
 
     host = {
       name = "YuXuans-MacBook-Pro";
@@ -68,7 +68,7 @@
               enable = true;
 
               # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-              # enableRosetta = true;
+              enableRosetta = true;
 
               # User owning the Homebrew prefix
               user = user.name;
