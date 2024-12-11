@@ -2,8 +2,8 @@
   home = {
     packages = with pkgs; [
       # shell
-      # atuin
       btop
+      mcfly
       procs
       thefuck
       tldr
@@ -47,22 +47,18 @@
   };
 
   programs = {
-    # atuin.enable = true;
-
     bat = {
       enable = true;
       config = {
         theme = "Dracula";
       };
     };
-
-    btop.enable = true;
+    
     direnv = {
       enable = true;
+      mise.enable = true;
       nix-direnv.enable = true;
     };
-    eza.enable = true;
-    fd.enable = true;
 
     fzf = {
       enable = true;
@@ -75,19 +71,28 @@
       tmux.enableShellIntegration = true;
     };
 
-    jq.enable = true;
-    lazygit.enable = true;
-
     mcfly = {
       enable = true;
       fuzzySearchFactor = 2;
       fzf.enable = true;
     };
 
+    starship = {
+      enable = true;
+      settings = {
+        format = "$character";
+        right_format = "$all";
+      };
+    };
+
+    btop.enable = true;
+    eza.enable = true;
+    fd.enable = true;
+    jq.enable = true;
+    lazygit.enable = true;
     mise.enable = true;
     nix-index.enable = true;
     ripgrep.enable = true;
-    starship.enable = true;
     thefuck.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
