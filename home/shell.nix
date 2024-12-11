@@ -53,7 +53,7 @@
         theme = "Dracula";
       };
     };
-    
+
     direnv = {
       enable = true;
       mise.enable = true;
@@ -77,14 +77,6 @@
       fzf.enable = true;
     };
 
-    starship = {
-      enable = true;
-      settings = {
-        format = "$character";
-        right_format = "$all";
-      };
-    };
-
     btop.enable = true;
     eza.enable = true;
     fd.enable = true;
@@ -93,6 +85,7 @@
     mise.enable = true;
     nix-index.enable = true;
     ripgrep.enable = true;
+    starship.enable = true;
     thefuck.enable = true;
     yazi.enable = true;
     zoxide.enable = true;

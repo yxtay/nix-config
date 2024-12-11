@@ -97,7 +97,7 @@
         "com.apple.sound.beep.feedback" = 0;
         "com.apple.springing.enabled" = true;
         "com.apple.swipescrolldirection" = false;
-        "com.apple.trackpad.enableSecondaryClick" =true;
+        "com.apple.trackpad.enableSecondaryClick" = true;
         "com.apple.trackpad.forceClick" = true;
         "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
       };

@@ -54,9 +54,9 @@
       "docker-compose"
       "docker-credential-helper"
       "helm"
-      "kind"  # podman-desktop
-      "kubectl"  # podman-desktop
-      "podman"  # podman-desktop
+      "kind" # podman-desktop
+      "kubectl" # podman-desktop
+      "podman" # podman-desktop
     ];
 
     casks = [
@@ -64,13 +64,12 @@
       "rectangle"
 
       # web
-      "bitwarden"
       "brave-browser"
       "firefox"
 
       # communication
       "libreoffice"
-      "microsoft-auto-update"  # for microsoft-teams
+      "microsoft-auto-update" # for microsoft-teams
       "microsoft-teams"
       "slack"
       "zoom"
@@ -87,7 +86,6 @@
       "stremio"
 
       # work
-      "1password"
       "cloudflare-warp"
       "intune-company-portal"
     ];

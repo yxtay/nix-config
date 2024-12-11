@@ -6,7 +6,10 @@
       extraConfig = ''
         return {
           color_scheme = "Dracula (Official)",
-          front_end = "WebGpu"
+          font = wezterm.font "FiraCode Nerd Font",
+          tab_bar_at_bottom = true,
+          window_close_confirmation = "NeverPrompt",
+          window_decorations = "RESIZE",
         }
       '';
     };
@@ -17,6 +20,10 @@
 
     return {
       color_scheme = "Dracula (Official)",
+      font = wezterm.font "FiraCode Nerd Font",
+      tab_bar_at_bottom = true,
+      window_close_confirmation = "NeverPrompt",
+      window_decorations = "RESIZE",
     }
   '';
 }
