@@ -33,7 +33,7 @@
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
 
     host = {
-      name = "YuXuans-MacBook-Pro";
+      name = "yx-tay-pkf2k";
     };
 
     user = rec {
