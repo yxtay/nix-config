@@ -1,4 +1,8 @@
-{...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   programs = {
     wezterm = {
       enable = false;
@@ -7,6 +11,7 @@
         return {
           color_scheme = "Dracula (Official)",
           font = wezterm.font "FiraCode Nerd Font",
+          front_end = "WebGpu",
           tab_bar_at_bottom = true,
           window_close_confirmation = "NeverPrompt",
           window_decorations = "RESIZE",
@@ -15,15 +20,8 @@
     };
   };
 
-  xdg.configFile."wezterm/wezterm.lua".text = ''
-    local wezterm = require 'wezterm'
-
-    return {
-      color_scheme = "Dracula (Official)",
-      font = wezterm.font "FiraCode Nerd Font",
-      tab_bar_at_bottom = true,
-      window_close_confirmation = "NeverPrompt",
-      window_decorations = "RESIZE",
-    }
-  '';
+  xdg.configFile."wezterm/wezterm.lua".text = lib.strings.concatLines [
+    ''local wezterm = require "wezterm"''
+    config.programs.wezterm.extraConfig
+  ];
 }
