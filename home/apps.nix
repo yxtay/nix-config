@@ -19,6 +19,7 @@
     nix-direnv
     ollama
     terraform
+    terragrunt
 
     # container
     # docker  # homebrew

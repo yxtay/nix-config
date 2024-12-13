@@ -175,11 +175,11 @@
 
       trackpad = {
         Clicking = true;
-        Dragging = true;
+        Dragging = false;
         FirstClickThreshold = 1;
         SecondClickThreshold = 2;
         TrackpadRightClick = true;
-        TrackpadThreeFingerDrag = true;
+        TrackpadThreeFingerDrag = false;
         TrackpadThreeFingerTapGesture = 2;
       };
     };
