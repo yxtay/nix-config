@@ -32,11 +32,9 @@
 
     # python
     cookiecutter
-    pdm
-    pipx
     poetry
     pre-commit
-    pylyzer
+    pyright
     ruff
     uv
 

@@ -36,9 +36,9 @@
       name = "yx-tay-pkf2k";
     };
 
-    user = rec {
+    user = {
       name = "yuxuantay";
-      home = "/Users/${name}";
+      home = "/Users/${user.name}";
       email = "wyextay@gmail.com";
       workEmail = "tay.yuxuan@gt.tech.gov.sg";
     };

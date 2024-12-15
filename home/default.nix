@@ -7,7 +7,6 @@
     ./gnu.nix
     ./helix.nix
     ./shell.nix
-    ./tmux.nix
     ./wezterm.nix
     ./zsh.nix
   ];
