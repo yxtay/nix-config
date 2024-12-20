@@ -2,9 +2,14 @@
   description = "nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    darwin = {
+    determinate = {
+      url = "https://flakehub.com/f/DeterminateSystems/determinate/0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -14,17 +19,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
-    mac-app-util.url = "github:hraban/mac-app-util";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nix-darwin.follows = "nix-darwin";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
-    darwin,
-    home-manager,
     determinate,
+    nix-darwin,
+    home-manager,
     mac-app-util,
     nix-homebrew,
     ...
@@ -51,7 +63,7 @@
     # Nix Darwin configuration entrypoint
     # Available through 'nix run nix-darwin -- switch --flake .#simple'
     darwinConfigurations = {
-      "${host.name}" = darwin.lib.darwinSystem {
+      "${host.name}" = nix-darwin.lib.darwinSystem {
         inherit system specialArgs;
 
         modules = [

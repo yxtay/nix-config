@@ -12,6 +12,7 @@
 
     # dev
     ansible
+    chezmoi
     direnv
     git
     gh
