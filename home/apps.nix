@@ -18,6 +18,7 @@
     mise
     nix-direnv
     ollama
+    rustup
     terraform
     terragrunt
 
@@ -37,9 +38,6 @@
     pyright
     ruff
     uv
-
-    # mac
-    mas
 
     # work
     awscli

@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   user,
   ...
@@ -10,6 +11,13 @@
   home.activation.removeExistingGitconfig = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
     rm -f ~/.gitconfig
   '';
+
+  home.packages = with pkgs; [
+    delta
+    gh
+    git
+    git-lfs
+  ];
 
   programs = {
     git = {
@@ -58,15 +66,6 @@
         rebase = {
           autosquash = true;
           autostash = true;
-        };
-
-        filter = {
-          "lfs" = {
-            clean = "git-lfs clean -- %f";
-            process = "git-lfs filter-process";
-            required = true;
-            smudge = "git-lfs smudge -- %f";
-          };
         };
 
         # fsckobjects

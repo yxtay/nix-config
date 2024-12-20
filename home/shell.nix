@@ -4,6 +4,7 @@
       # shell
       btop
       mcfly
+      mcfly-fzf
       procs
       thefuck
       tldr
@@ -60,12 +61,12 @@
       nix-direnv.enable = true;
     };
 
-    fzf = {
+    fzf = rec {
       enable = true;
       changeDirWidgetCommand = "fd --type d --hidden --no-ignore --exclude '.git'";
-      changeDirWidgetOptions = ["--preview 'eza --tree --color=always {} | head -50'"];
-      defaultCommand = "fd --hidden --no-ignore --exclude '.git'";
-      defaultOptions = [];
+      changeDirWidgetOptions = ["--preview 'eza --tree --color=always --icons=always {} | head -200'"];
+      defaultCommand = fileWidgetCommand;
+      defaultOptions = fileWidgetOptions;
       fileWidgetCommand = "fd --type f --hidden --no-ignore --exclude '.git'";
       fileWidgetOptions = ["--preview 'bat --color=always {}'"];
       tmux.enableShellIntegration = true;

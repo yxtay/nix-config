@@ -3,11 +3,22 @@
   pkgs,
   ...
 }: {
-  programs.zsh = {
+  home.packages = with pkgs; [
+    zsh
+    zsh-abbr
+    zsh-autosuggestions
+    zsh-history-substring-search
+    zsh-syntax-highlighting
+  ];
+
+  programs.zsh = rec {
     enable = true;
 
     autocd = true;
     enableCompletion = true;
+    historySubstringSearch.enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     history = {
       append = true;
@@ -16,15 +27,11 @@
       ignoreAllDups = true;
     };
 
-    historySubstringSearch.enable = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
     shellAliases = config.home.shellAliases;
 
     zsh-abbr = {
       enable = true;
-      abbreviations = config.programs.zsh.shellAliases;
+      abbreviations = shellAliases;
     };
 
     plugins = [];

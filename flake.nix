@@ -15,7 +15,6 @@
     };
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
-
     mac-app-util.url = "github:hraban/mac-app-util";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
