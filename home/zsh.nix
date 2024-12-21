@@ -4,20 +4,21 @@
   ...
 }: {
   home.packages = with pkgs; [
+    nix-zsh-completions
     zsh
     zsh-abbr
     zsh-autosuggestions
+    zsh-completions
     zsh-history-substring-search
     zsh-syntax-highlighting
   ];
 
-  programs.zsh = rec {
+  programs.zsh = {
     enable = true;
 
     autocd = true;
     enableCompletion = true;
     historySubstringSearch.enable = true;
-    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     history = {
@@ -27,13 +28,23 @@
       ignoreAllDups = true;
     };
 
+    autosuggestion = {
+      enable = true;
+      strategy = ["match_prev_cmd" "history" "completion"];
+    };
+
     shellAliases = config.home.shellAliases;
 
     zsh-abbr = {
       enable = true;
-      abbreviations = shellAliases;
+      abbreviations = config.programs.zsh.shellAliases;
     };
 
-    plugins = [];
+    plugins = with pkgs; [
+      {
+        name = "zsh-completions";
+        src = zsh-completions.src;
+      }
+    ];
   };
 }
