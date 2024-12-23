@@ -2,8 +2,15 @@
   description = "nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
+    flake-compat.url = "github:hraban/flake-compat";
     systems.url = "github:nix-systems/default-darwin";
+
+    nix = {
+      url = "github:NixOS/nix/latest-release";
+      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
+    };
 
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -16,19 +23,20 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     determinate = {
       url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix.inputs.nixpkgs.follows= "nixpkgs";
+      inputs.nix.follows = "nix";
     };
 
     mac-app-util = {
       url = "github:hraban/mac-app-util";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
       inputs.flake-utils.follows = "flake-utils";
       inputs.systems.follows = "systems";
     };

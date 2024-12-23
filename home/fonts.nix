@@ -1,11 +1,17 @@
 {pkgs, ...}: {
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs.nerd-fonts; [
-    symbols-only
-    fira-code
-    jetbrains-mono
-    roboto-mono
-    sauce-code-pro
+  home.packages = with pkgs; [
+    (
+      nerdfonts.override {
+        fonts = [
+          "NerdFontsSymbolsOnly"
+          "FiraCode"
+          "JetBrainsMono"
+          "RobotoMono"
+          "SourceCodePro"
+        ];
+      }
+    )
   ];
 }
