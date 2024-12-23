@@ -65,8 +65,8 @@
       enable = true;
       changeDirWidgetCommand = "fd --type d --hidden --no-ignore --exclude '.git'";
       changeDirWidgetOptions = ["--preview 'eza --tree --color=always --icons=always {} | head -200'"];
-      defaultCommand = fileWidgetCommand;
-      defaultOptions = fileWidgetOptions;
+      defaultCommand = "";
+      defaultOptions = [];
       fileWidgetCommand = "fd --type f --hidden --no-ignore --exclude '.git'";
       fileWidgetOptions = ["--preview 'bat --color=always {}'"];
       tmux.enableShellIntegration = true;

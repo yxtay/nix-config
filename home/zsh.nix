@@ -40,11 +40,6 @@
       abbreviations = config.programs.zsh.shellAliases;
     };
 
-    plugins = with pkgs; [
-      {
-        name = "zsh-completions";
-        src = zsh-completions.src;
-      }
-    ];
+    plugins = with pkgs; [];
   };
 }

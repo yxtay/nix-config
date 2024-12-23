@@ -50,7 +50,6 @@
   };
 
   outputs = inputs @ {
-    self,
     nixpkgs,
     determinate,
     nix-darwin,
