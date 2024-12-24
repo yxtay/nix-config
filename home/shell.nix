@@ -53,6 +53,14 @@
       config = {
         theme = "Dracula";
       };
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batgrep
+        batman
+        batpipe
+        batwatch
+        prettybat
+      ];
     };
 
     direnv = {
