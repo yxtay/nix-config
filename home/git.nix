@@ -59,13 +59,27 @@
           algorithm = "histogram";
           colorMoved = "default";
         };
+        fetch = {
+          prune = true;
+          prunetags = true;
+        };
         help.autocorrect = 20;
-        init.defaultBranch = "main";
+        init.defaultbranch = "main";
+        log.date = "human";
+        merge.conflictstyle = "zdiff3";
         pull.rebase = true;
-        push.autoSetupRemote = true;
+        push = {
+          autosetupremote = true;
+          default = "current";
+          followtags = true;
+        };
         rebase = {
           autosquash = true;
           autostash = true;
+        };
+        rerere = {
+          enabled = true;
+          autoupdate = true;
         };
 
         # fsckobjects
@@ -75,7 +89,7 @@
 
         # submodule
         diff.submodule = "log";
-        status.submoduleSummary = true;
+        status.submodulesummary = true;
         submodule.recurse = true;
       };
 
@@ -93,19 +107,19 @@
         ds = "diff --stat";
         gl = "config --global -l";
         st = "status";
-        ll = "log --oneline";
+        ll = "log --graph --oneline";
         rh = "reset --hard";
         rs = "reset --soft HEAD~1";
         rv = "remote -v";
         sw = "switch";
 
+        alias = "config --get-regexp alias";
         aliases = "config --get-regexp alias";
-        amend = "commit --amend -m";
+        amend = "commit -am";
         last = "log -1 HEAD --stat";
         unadd = "restore --staged";
         undo = "reset HEAD~1 --mixed";
         untrack = "rm --cached";
-
         update = "submodule update --init --recursive";
         foreach = "submodule foreach";
       };
