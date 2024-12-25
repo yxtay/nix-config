@@ -2,12 +2,12 @@
   # import sub modules
   imports = [
     ./apps.nix
+    ./cli.nix
     ./editorconfig.nix
     ./fonts.nix
     ./git.nix
     ./gnu.nix
     ./helix.nix
-    ./shell.nix
     ./wezterm.nix
     ./zsh.nix
   ];
