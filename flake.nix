@@ -67,8 +67,8 @@
     user = {
       name = "yuxuantay";
       home = "/Users/${user.name}";
-      email = "wyextay@gmail.com";
-      workEmail = "tay.yuxuan@gt.tech.gov.sg";
+      email = "5795122+yxtay@users.noreply.github.com";
+      workEmail = "139188417+daip-yxtay@users.noreply.github.com";
     };
 
     specialArgs =
