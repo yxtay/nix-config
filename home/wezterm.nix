@@ -20,7 +20,7 @@
     };
   };
 
-  xdg.configFile."wezterm/wezterm.lua".text = lib.strings.concatLines [
+  xdg.configFile."wezterm/wezterm.lua".text = lib.concatLines [
     ''local wezterm = require "wezterm"''
     config.programs.wezterm.extraConfig
   ];

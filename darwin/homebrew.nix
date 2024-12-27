@@ -5,7 +5,7 @@
 }: {
   # https://github.com/zhaofengli/nix-homebrew/issues/3
   system.activationScripts.extraUserActivation.text = lib.mkOrder 1501 (
-    lib.concatStringsSep "\n" (
+    lib.concatLines (
       lib.mapAttrsToList (
         prefix: d:
           if d.enable

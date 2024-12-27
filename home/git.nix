@@ -1,9 +1,14 @@
 {
+  config,
   pkgs,
   lib,
+  gitignore,
+  gitalias,
   user,
   ...
-}: {
+}: let
+  gitignore_files = ["macOS" "Linux"];
+in {
   # `programs.git` will generate the config file: ~/.config/git/config
   # to make git use this config file, `~/.gitconfig` should not exist!
   #
@@ -16,8 +21,19 @@
     delta
     gh
     git
+    git-extras
     git-lfs
   ];
+
+  xdg.configFile = {
+    "git/ignore".text = lib.concatLines (
+      map (file: builtins.readFile "${gitignore}/Global/${file}.gitignore") gitignore_files
+    );
+  };
+
+  xdg.configFile = {
+    "git/alias".source = "${gitalias}/gitalias.txt";
+  };
 
   programs = {
     git = {
@@ -28,6 +44,9 @@
       userEmail = user.email;
 
       includes = [
+        {
+          path = "${config.xdg.configHome}/git/alias";
+        }
         {
           condition = "gitdir:~/git/work/";
           contents = {
@@ -40,17 +59,6 @@
             };
           };
         }
-        {
-          condition = "gitdir:~/git/personal/";
-          contents = {
-            user.email = user.email;
-            url = {
-              "git@github.com:" = {
-                pushInsteadOf = "https://github.com/";
-              };
-            };
-          };
-        }
       ];
 
       extraConfig = {
@@ -58,6 +66,7 @@
         diff = {
           algorithm = "histogram";
           colorMoved = "default";
+          renames = "copies";
         };
         fetch = {
           prune = true;
@@ -91,37 +100,12 @@
         diff.submodule = "log";
         status.submodulesummary = true;
         submodule.recurse = true;
-      };
 
-      aliases = {
-        d = "diff";
-        f = "fetch";
-        p = "push";
-        r = "reset";
-        s = "status";
-        br = "branch";
-        ca = "commit -am";
-        cm = "commit -m";
-        co = "checkout";
-        dc = "diff --cached";
-        ds = "diff --stat";
-        gl = "config --global -l";
-        st = "status";
-        ll = "log --graph --oneline";
-        rh = "reset --hard";
-        rs = "reset --soft HEAD~1";
-        rv = "remote -v";
-        sw = "switch";
-
-        alias = "config --get-regexp alias";
-        aliases = "config --get-regexp alias";
-        amend = "commit -am";
-        last = "log -1 HEAD --stat";
-        unadd = "restore --staged";
-        undo = "reset HEAD~1 --mixed";
-        untrack = "rm --cached";
-        update = "submodule update --init --recursive";
-        foreach = "submodule foreach";
+        url = {
+          "git@github.com:${user.githubName}" = {
+            pushInsteadOf = "https://github.com/${user.githubName}";
+          };
+        };
       };
 
       delta = {
@@ -133,6 +117,7 @@
           hyperlinks-file-link-format = "vscode://file/{path}:{line}";
           navigate = true;
           side-by-side = true;
+          syntax-theme = "Dracula";
         };
       };
     };

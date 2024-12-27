@@ -47,6 +47,17 @@
       inputs.nix-darwin.follows = "nix-darwin";
       inputs.flake-utils.follows = "flake-utils";
     };
+
+    # git repos
+    gitalias = {
+      url = "github:GitAlias/gitalias";
+      flake = false;
+    };
+
+    gitignore = {
+      url = "github:github/gitignore";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -67,6 +78,7 @@
     user = {
       name = "yuxuantay";
       home = "/Users/${user.name}";
+      githubName = "yxtay";
       email = "5795122+yxtay@users.noreply.github.com";
       workEmail = "139188417+daip-yxtay@users.noreply.github.com";
     };
