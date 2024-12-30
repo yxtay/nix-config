@@ -114,7 +114,6 @@ in {
           dark = true;
           line-numbers = true;
           hyperlinks = true;
-          hyperlinks-file-link-format = "vscode://file/{path}:{line}";
           navigate = true;
           side-by-side = true;
           syntax-theme = "Dracula";

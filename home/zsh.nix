@@ -5,7 +5,6 @@
 }: {
   home.packages = with pkgs; [
     nix-zsh-completions
-    oh-my-zsh
     zsh
     # zsh-autocomplete
     zsh-autosuggestions
@@ -23,9 +22,10 @@
     dotDir = ".config/zsh";
 
     autocd = true;
-    enableCompletion = false; # disable for zsh-autocomplete
+    enableCompletion = true;
     historySubstringSearch.enable = true;
     # syntaxHighlighting.enable = true;
+    # zprof.enable = true;
 
     history = {
       append = true;
@@ -40,17 +40,6 @@
     };
 
     shellAliases = config.home.shellAliases;
-    # zsh-abbr = {
-    #   enable = true;
-    #   abbreviations = config.programs.zsh.shellAliases;
-    # };
-
-    oh-my-zsh = {
-      enable = true;
-      extraConfig = "";
-      plugins = ["git"];
-      theme = "";
-    };
 
     plugins = with pkgs; [
       {
@@ -61,10 +50,6 @@
       {
         name = "forgit";
         src = "${zsh-forgit}/share/zsh/zsh-forgit";
-      }
-      {
-        name = "fast-syntax-highlighting";
-        src = "${zsh-fast-syntax-highlighting}/share/zsh/site-functions";
       }
       {
         name = "you-should-use";
@@ -78,6 +63,10 @@
       #   name = "zsh-vi-mode";
       #   src = "${zsh-vi-mode}/share/zsh-vi-mode";
       # }
+      {
+        name = "fast-syntax-highlighting";
+        src = "${zsh-fast-syntax-highlighting}/share/zsh/site-functions";
+      }
     ];
   };
 }
