@@ -435,8 +435,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_2",
-        "systems": "systems",
-        "zimfw": "zimfw"
+        "systems": "systems"
       }
     },
     "systems": {
@@ -451,26 +450,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-darwin",
-        "type": "github"
-      }
-    },
-    "zimfw": {
-      "inputs": {
-        "home-manager": [
-          "home-manager"
-        ]
-      },
-      "locked": {
-        "lastModified": 1704039982,
-        "narHash": "sha256-JgMBZXW+33/b3nTcTaDc1r3vSn8DkCIlNuz7DcwWiiM=",
-        "owner": "joedevivo",
-        "repo": "zimfw.nix",
-        "rev": "1abc53e3d1c2711abf653ae05e91cb9668efa211",
-        "type": "github"
-      },
-      "original": {
-        "owner": "joedevivo",
-        "repo": "zimfw.nix",
         "type": "github"
       }
     }

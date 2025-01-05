@@ -29,9 +29,7 @@ in {
     "git/ignore".text = lib.concatLines (
       map (file: builtins.readFile "${gitignore}/Global/${file}.gitignore") gitignore_files
     );
-  };
 
-  xdg.configFile = {
     "git/alias".source = "${gitalias}/gitalias.txt";
   };
 

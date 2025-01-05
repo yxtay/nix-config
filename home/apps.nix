@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # terminals & editors
+    chezmoi
     helix
     micro
     nano
@@ -12,7 +13,6 @@
 
     # dev
     ansible
-    chezmoi
     direnv
     git
     gh

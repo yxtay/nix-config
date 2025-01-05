@@ -48,11 +48,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
-    zimfw = {
-      url = "github:joedevivo/zimfw.nix";
-      inputs.home-manager.follows = "home-manager";
-    };
-
     # git repos
     gitalias = {
       url = "github:GitAlias/gitalias";
@@ -72,7 +67,6 @@
     home-manager,
     mac-app-util,
     nix-homebrew,
-    zimfw,
     ...
   }: let
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
@@ -142,7 +136,6 @@
               extraSpecialArgs = specialArgs;
               sharedModules = [
                 mac-app-util.homeManagerModules.default
-                zimfw.homeManagerModules.zimfw
               ];
               users.${user.name} = import ./home;
             };

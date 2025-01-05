@@ -7,7 +7,7 @@
       mcfly-fzf
       procs
       thefuck
-      tldr
+      tlrc
 
       # text
       bat
@@ -71,12 +71,12 @@
 
     fzf = rec {
       enable = true;
-      changeDirWidgetCommand = "fd --type d --hidden --no-ignore --exclude '.git'";
+      changeDirWidgetCommand = "fd --type d --hidden --exclude '.git'";
       changeDirWidgetOptions = ["--preview 'eza --tree --color=always --icons=always {} | head -200'"];
       defaultCommand = "";
       defaultOptions = [];
-      fileWidgetCommand = "fd --type f --hidden --no-ignore --exclude '.git'";
-      fileWidgetOptions = ["--preview 'bat --color=always {}'"];
+      fileWidgetCommand = "fd --hidden --exclude '.git'";
+      fileWidgetOptions = ["--preview 'bat --color=always --line-range :500 {}'"];
       tmux.enableShellIntegration = true;
     };
 
