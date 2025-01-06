@@ -99,31 +99,7 @@
 
           determinate.darwinModules.default
           mac-app-util.darwinModules.default
-          # https://github.com/zhaofengli/nix-homebrew
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              # Install Homebrew under the default prefix
-              enable = true;
-
-              # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-              enableRosetta = true;
-
-              # User owning the Homebrew prefix
-              user = user.name;
-
-              # Optional: Declarative tap management
-              # taps = {
-              # };
-
-              # Optional: Enable fully-declarative tap management
-              # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-              mutableTaps = true;
-
-              # Automatically migrate existing Homebrew installations
-              autoMigrate = true;
-            };
-          }
 
           # home manager
           home-manager.darwinModules.home-manager

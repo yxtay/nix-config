@@ -6,14 +6,12 @@
   home.packages = with pkgs; [
     nix-zsh-completions
     zsh
-    # zsh-autocomplete
     zsh-autosuggestions
     zsh-completions
     zsh-fast-syntax-highlighting
     zsh-forgit
     zsh-fzf-tab
     zsh-history-substring-search
-    # zsh-vi-mode
     zsh-you-should-use
   ];
 
@@ -21,25 +19,12 @@
     enable = true;
     dotDir = ".config/zsh";
 
-    autocd = true;
-    enableCompletion = true;
-    historySubstringSearch.enable = true;
-    # syntaxHighlighting.enable = true;
     # zprof.enable = true;
-
-    history = {
-      append = true;
-      expireDuplicatesFirst = true;
-      extended = true;
-      ignoreAllDups = true;
-    };
-
+    enableCompletion = true;
     autosuggestion = {
       enable = true;
       strategy = ["match_prev_cmd" "history" "completion"];
     };
-
-    shellAliases = config.home.shellAliases;
 
     plugins = with pkgs; [
       {
@@ -55,18 +40,24 @@
         name = "you-should-use";
         src = "${zsh-you-should-use}/share/zsh/plugins/you-should-use";
       }
-      # {
-      #   name = "zsh-autocomplete";
-      #   src = "${zsh-autocomplete}/share/zsh-autocomplete";
-      # }
-      # {
-      #   name = "zsh-vi-mode";
-      #   src = "${zsh-vi-mode}/share/zsh-vi-mode";
-      # }
       {
         name = "fast-syntax-highlighting";
         src = "${zsh-fast-syntax-highlighting}/share/zsh/site-functions";
       }
     ];
+
+    history = {
+      append = true;
+      expireDuplicatesFirst = true;
+      extended = true;
+      ignoreAllDups = true;
+    };
+    autocd = true;
+
+    initExtra = ''eval "$(brew shellenv 2>/dev/null || true)"'';
+    shellAliases = config.home.shellAliases;
+
+    # syntaxHighlighting.enable = true;
+    historySubstringSearch.enable = true;
   };
 }

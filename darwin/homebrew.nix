@@ -1,6 +1,7 @@
 {
-  config,
   lib,
+  config,
+  user,
   ...
 }: {
   # https://github.com/zhaofengli/nix-homebrew/issues/3
@@ -18,6 +19,30 @@
       config.nix-homebrew.prefixes
     )
   );
+
+  # https://github.com/zhaofengli/nix-homebrew
+  nix-homebrew = {
+    # Install Homebrew under the default prefix
+    enable = true;
+    enableZshIntegration = false;
+
+    # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+    enableRosetta = true;
+
+    # User owning the Homebrew prefix
+    user = user.name;
+
+    # Optional: Declarative tap management
+    # taps = {
+    # };
+
+    # Optional: Enable fully-declarative tap management
+    # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
+    mutableTaps = true;
+
+    # Automatically migrate existing Homebrew installations
+    autoMigrate = true;
+  };
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!

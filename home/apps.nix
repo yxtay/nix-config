@@ -34,7 +34,6 @@
 
     # python
     cookiecutter
-    poetry
     pre-commit
     pyright
     ruff

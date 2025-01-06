@@ -2,12 +2,12 @@
   # import sub modules
   imports = [
     ./apps.nix
-    ./cli.nix
     ./editorconfig.nix
     ./fonts.nix
     ./git.nix
     ./gnu.nix
     ./helix.nix
+    ./sh.nix
     ./wezterm.nix
     ./zsh.nix
   ];
@@ -93,4 +93,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  xdg.enable = true;
 }

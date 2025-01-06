@@ -4,6 +4,7 @@
     ./homebrew.nix
     ./nix-core.nix
     ./system.nix
+    ./zsh.nix
   ];
 
   system.stateVersion = 5;

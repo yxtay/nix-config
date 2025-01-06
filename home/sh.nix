@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   home = {
     packages = with pkgs; [
       # shell
@@ -34,6 +34,10 @@
       httpie
       rclone
       rsync
+    ];
+
+    sessionPath = [
+      "${config.home.homeDirectory}/.local/bin"
     ];
 
     shellAliases = {
