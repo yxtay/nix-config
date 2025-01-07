@@ -4,6 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
+    fzf-git-sh
     nix-zsh-completions
     zsh
     zsh-autosuggestions
@@ -17,7 +18,14 @@
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
+
+    envExtra = ''
+      [[ -v sourced_home_zshenv ]] && return
+      sourced_home_zshenv=1
+
+      zdotdir_zshenv=${config.xdg.configHome}/zsh/.zshenv
+      [[ -f $zdotdir_zshenv ]] && source $zdotdir_zshenv
+    '';
 
     defaultKeymap = "emacs";
 
@@ -39,6 +47,11 @@
         src = "${zsh-you-should-use}/share/zsh/plugins/you-should-use";
       }
       {
+        name = "fzf-git-sh";
+        src = "${fzf-git-sh}/share/fzf-git-sh";
+        file = "fzf-git.sh";
+      }
+      {
         name = "forgit";
         src = "${zsh-forgit}/share/zsh/zsh-forgit";
       }
@@ -54,10 +67,12 @@
       {
         name = "zsh-history-substring-search";
         src = "${zsh-history-substring-search}/share/zsh-history-substring-search";
+        file = "zsh-history-substring-search.zsh";
       }
       {
         name = "zsh-autosuggestions";
         src = "${zsh-autosuggestions}/share/zsh-autosuggestions";
+        file = "zsh-autosuggestions.zsh";
       }
     ];
 

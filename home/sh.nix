@@ -39,16 +39,6 @@
     sessionPath = [
       "${config.home.homeDirectory}/.local/bin"
     ];
-
-    shellAliases = {
-      d = "docker";
-      g = "git";
-      k = "kubectl";
-      p = "podman";
-      ".." = "z ..";
-      cd = "z";
-      cat = "bat";
-    };
   };
 
   programs = {
