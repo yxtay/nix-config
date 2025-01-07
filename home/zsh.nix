@@ -4,16 +4,15 @@
   ...
 }: {
   home.packages = with pkgs; [
-    fzf-git-sh
     nix-zsh-completions
     zsh
     zsh-autosuggestions
     zsh-completions
     zsh-fast-syntax-highlighting
-    zsh-forgit
+    # zsh-forgit
     zsh-fzf-tab
     zsh-history-substring-search
-    zsh-you-should-use
+    # zsh-you-should-use
   ];
 
   programs.zsh = {
@@ -42,19 +41,14 @@
     # };
 
     plugins = with pkgs; [
-      {
-        name = "you-should-use";
-        src = "${zsh-you-should-use}/share/zsh/plugins/you-should-use";
-      }
-      {
-        name = "fzf-git-sh";
-        src = "${fzf-git-sh}/share/fzf-git-sh";
-        file = "fzf-git.sh";
-      }
-      {
-        name = "forgit";
-        src = "${zsh-forgit}/share/zsh/zsh-forgit";
-      }
+      # {
+      #   name = "forgit";
+      #   src = "${zsh-forgit}/share/zsh/zsh-forgit";
+      # }
+      # {
+      #   name = "you-should-use";
+      #   src = "${zsh-you-should-use}/share/zsh/plugins/you-should-use";
+      # }
       {
         # before zsh-autosuggestion and fast-syntax-highlighting
         name = "fzf-tab";
@@ -65,11 +59,13 @@
         src = "${zsh-fast-syntax-highlighting}/share/zsh/site-functions";
       }
       {
+        # after syntax-highting
         name = "zsh-history-substring-search";
         src = "${zsh-history-substring-search}/share/zsh-history-substring-search";
         file = "zsh-history-substring-search.zsh";
       }
       {
+        # should be last
         name = "zsh-autosuggestions";
         src = "${zsh-autosuggestions}/share/zsh-autosuggestions";
         file = "zsh-autosuggestions.zsh";
