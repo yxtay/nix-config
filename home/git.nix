@@ -43,10 +43,7 @@ in {
 
       includes = [
         {
-          path = "${config.xdg.configHome}/git/alias";
-        }
-        {
-          condition = "gitdir:~/git/work/";
+          condition = "gitdir:~/work/";
           contents = {
             user.email = user.workEmail;
             url = {
@@ -56,6 +53,9 @@ in {
               };
             };
           };
+        }
+        {
+          path = "${config.xdg.configHome}/git/alias";
         }
       ];
 
